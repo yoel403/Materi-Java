@@ -1,0 +1,9 @@
+1. String Nama = "Donovan";
+ 
+public String Name{
+	return Nama;
+}
+
+2. Name NamaDepan = new Name ;
+String Nama1 = NamaDepan.Name ;
+System.out.println(Nama1);
