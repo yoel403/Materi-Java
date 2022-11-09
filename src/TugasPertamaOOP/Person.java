@@ -1,4 +1,4 @@
-package TugasKeduaOOP;
+package TugasPertamaOOP;
 
 public class Person {
     private String firstName;

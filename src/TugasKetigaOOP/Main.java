@@ -1,4 +1,4 @@
-package TugasKeduaOOP;
+package TugasKetigaOOP;
 
 import java.util.Scanner;
 
@@ -7,14 +7,14 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     Segitiga segitiga = new Segitiga();
     Persegi persegi = new Persegi();
-    Lingkara lingkaran = new Lingkara();
+    Lingkaran lingkaran = new Lingkaran();
     Prisma prisma = new Prisma();
     Bola bola = new Bola();
     Kubus kubus = new Kubus();
 
     //atribut
-    String opsi,next, nextopsi ;
-    int tinggi , panjang , alas , sisi1, sisi2, sisi3 , lebar, tinggiPrisma;
+    String opsi,next, nextOpsi;
+    int tinggi , panjang , alas , sisi1, sisi2, sisi3 , lebar, tinggiPrisma, keliling;
     float r;
     public static void main(String[] args) {
         Main main = new Main();
@@ -46,7 +46,6 @@ public class Main {
             System.out.print("Ingin melanjutkan Program? y/n : ");
             main.next = main.scanner.next();
         } while (main.next.equalsIgnoreCase("y"));
-        
     }
 
     public void menuProgram() {
@@ -63,13 +62,16 @@ public class Main {
         System.out.println("1. Luas");
         System.out.println("2. keliling");
         System.out.println("3. Volume");
+        System.out.println("4. Gambar");
+        System.out.println("5. Karakteristik");
+        System.out.println("6. Luas Permukaan");
         System.out.print("Masukan Pilihan : ");
-        nextopsi = scanner.next();
+        nextOpsi = scanner.next();
     }
 
     public void opsiSegitiga(){
         do {
-            switch (nextopsi) {
+            switch (nextOpsi) {
                 case "1":
                     System.out.println("\nmenghitung luas");
                     System.out.print("Masukan Tinggi : ");
@@ -79,7 +81,7 @@ public class Main {
     
                     segitiga.setTinggi(tinggi);
                     segitiga.setAlas(alas);
-                    segitiga.luasSegitiga();
+                    segitiga.luas();
                     break;
     
                 case "2":
@@ -94,7 +96,7 @@ public class Main {
                     segitiga.setSisi1(sisi1);
                     segitiga.setSisi2(sisi2);
                     segitiga.setSisi3(sisi3);
-                    segitiga.kelilingSegitiga();
+                    segitiga.keliling();
                     break;
     
                 case "3":
@@ -109,14 +111,40 @@ public class Main {
                     prisma.setAlas(alas);
                     prisma.setTinggi(tinggi);
                     prisma.setTinggiPrisma(tinggiPrisma);
-                    prisma.hasilVolumee();
+                    prisma.volume();
                     break;
-    
+
+                case "4":
+                    segitiga.gambarBangun();
+                    break;
+
+                case "5":
+                    segitiga.karakteristikBangun();
+                    break;
+
+                case "6":
+                    System.out.println("\nmenghitung LP");
+                    System.out.print("Masukan tinggi : ");
+                    tinggi = scanner.nextInt();
+                    System.out.print("Masukan alas : ");
+                    alas = scanner.nextInt();
+                    System.out.print("Masukan tinggi prisma : ");
+                    tinggiPrisma = scanner.nextInt();
+                    System.out.print("Masukan keliling prisma : ");
+                    tinggiPrisma = scanner.nextInt();
+
+                    prisma.setAlas(alas);
+                    prisma.setTinggi(tinggi);
+                    prisma.setTinggiPrisma(tinggiPrisma);
+                    prisma.setKeliling(keliling);
+                    prisma.volume();
+                    break;
+
                 default:
                 System.out.println("\nPilihan tidak ada");
                     break;
             }
-            System.out.print("Ingin melanjutkan Perhitungan? y/n : ");
+            System.out.print("Ingin mengulangi? y/n : ");
             next = scanner.next();
         } while (next.equalsIgnoreCase("y"));
         
@@ -124,14 +152,14 @@ public class Main {
 
     public void opsiPersegi(){
         do {
-            switch (nextopsi) {
+            switch (nextOpsi) {
                 case "1":
                     System.out.println("\nmenghitung luas");
                     System.out.print("Masukan sisinya : ");
                     sisi1 = scanner.nextInt();
 
                     persegi.setSisi(sisi1);
-                    persegi.luasPersegi();
+                    persegi.luas();
                     break;
     
                 case "2":
@@ -140,7 +168,7 @@ public class Main {
                     sisi1 = scanner.nextInt();
     
                     persegi.setSisi(sisi1);
-                    persegi.kelilingPersegi();
+                    persegi.keliling();
                     break;
     
                 case "3":
@@ -149,14 +177,32 @@ public class Main {
                     sisi1 = scanner.nextInt();
 
                     kubus.setSisi(sisi1);
-                    kubus.volumeKubus();
+                    kubus.volume();
                     break;
-    
+
+                case "4":
+                    persegi.gambarBangun();
+                    break;
+
+                case "5":
+                    persegi.karakteristikBangun();
+                    break;
+
+                case "6":
+                    System.out.println("\nmenghitung LP");
+                    System.out.print("Masukan sisi : ");
+                    sisi1 = scanner.nextInt();
+
+                    kubus.setSisi(sisi1);
+                    kubus.luasPermukaan();
+                    break;
+
+
                 default:
                 System.out.println("\nPilihan tidak ada");
                     break;
             }
-            System.out.print("Ingin melanjutkan Perhitungan? y/n : ");
+            System.out.print("Ingin mengulangi? y/n : ");
             next = scanner.next();
         } while (next.equalsIgnoreCase("y"));
         
@@ -164,14 +210,14 @@ public class Main {
 
     public void opsiLingkaran(){
         do {
-            switch (nextopsi) {
+            switch (nextOpsi) {
                 case "1":
                     System.out.println("\nmenghitung luas");
                     System.out.print("Masukan jari-jari : ");
                     r = scanner.nextFloat();
 
                     lingkaran.setR(r);
-                    lingkaran.luasLingkaran();
+                    lingkaran.luas();
                     break;
     
                 case "2":
@@ -180,25 +226,44 @@ public class Main {
                     r = scanner.nextFloat();
 
                     lingkaran.setR(r);
-                    lingkaran.kelilingLingkaran();
+                    lingkaran.keliling();
                     break;
     
                 case "3":
                     System.out.println("\nmenghitung Volume");
                     System.out.print("Masukan jari-jari : ");
-                    r =scanner.nextFloat();
+                    r = scanner.nextFloat();
 
                     bola.setR(r);
-                    bola.volumeLingkaran();
+                    bola.volume();
+                    break;
+
+                case "4":
+                    lingkaran.gambarBangun();
+                    break;
+
+                case "5":
+                    lingkaran.karakteristikBangun();
+                    break;
+
+                case "6":
+                    System.out.println("\nMenghitung LP");
+                    System.out.println("Masukan jari jari");
+                    r = scanner.nextFloat();
+
+                    bola.setR(r);
+                    bola.luasPermukaan();
                     break;
     
                 default:
                 System.out.println("\nPilihan tidak ada");
                     break;
             }
-            System.out.print("Ingin melanjutkan Perhitungan? y/n : ");
+            System.out.print("Ingin mengulangi? y/n : ");
             next = scanner.next();
         } while (next.equalsIgnoreCase("y"));
         
     }
+
+
 }

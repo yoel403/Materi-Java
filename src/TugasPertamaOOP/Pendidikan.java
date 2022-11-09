@@ -1,12 +1,11 @@
-package TugasKeduaOOP;
+package TugasPertamaOOP;
 
 public class Pendidikan {
     private String nik;
     private String pendidikanTerakhir;
     private int tahun;
-    Person person = new Person();
 
-    //constructor
+    //constructur
     public Pendidikan(String nik, String pendidikanTerakhir, int tahun) {
         this.nik = nik;
         this.pendidikanTerakhir = pendidikanTerakhir;
@@ -38,7 +37,7 @@ public class Pendidikan {
         this.tahun = tahun;
     }
 
-    public void getSudent() {
+    public void getSudent(Person person) {
         System.out.println("Data Student");
         System.out.println("Nama : " + person.getFirstName() + " " + person.getLastName());
         System.out.println("NIK : " + getNik());
