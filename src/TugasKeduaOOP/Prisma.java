@@ -1,4 +1,4 @@
-package TugasKeduaOOP;
+package tugasKeduaOOP;
 
 public class Prisma extends Segitiga {
 

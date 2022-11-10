@@ -1,4 +1,4 @@
-package TugasKeduaOOP;
+package tugasKeduaOOP;
 
 import java.util.Scanner;
 

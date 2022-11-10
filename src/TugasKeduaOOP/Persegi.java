@@ -1,4 +1,4 @@
-package TugasKeduaOOP;
+package tugasKeduaOOP;
 
 public class Persegi {
     private int sisi;
