@@ -1,8 +1,5 @@
 package tugasKeempat;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import tugasKeempat.services.LearningPLan;
 
 public class Student implements LearningPLan {
@@ -56,10 +53,8 @@ public class Student implements LearningPLan {
     @Override
     public int totalSks() {
         // TODO Auto-generated method stub
-        totalSks = getSks() + getSks();
-        if (totalSks > 144) {
-            System.out.println("selamat sudah menjadi HOKAGE karena sudah menyelesaikan " + totalSks + " SKS");
-        }
+        
+        totalSks = totalSks + getSks();
         return  totalSks;
     }
 

@@ -5,7 +5,7 @@ import java.util.*;
 public class Main {
     Scanner scanner = new Scanner(System.in);
     String opsi, next, domisili, room, course, firstName ,lastName, cardId, remmove;
-    int sks, total;
+    int sks, total,total2;
     Person person = new Person();
     Student student = new Student();
     List<Student> dataSt = new ArrayList<>();
@@ -24,7 +24,7 @@ public class Main {
                     main.firstName = main.scanner.next();
                     System.out.print("Masukan nama Belakang : ");
                     main.lastName = main.scanner.next();
-                    System.out.println("Masukan cardId : ");
+                    System.out.print("Masukan cardId : ");
                     main.cardId = main.scanner.next();
                     
                     main.person.setDomisili(main.domisili);
@@ -44,7 +44,18 @@ public class Main {
                     main.person.tampilkanProfile();
                     for (Student student : main.dataSt) {
                         System.out.println("Nama Matkul : " + student.getCourseName() + " || kode ruangan : " + student.getRoom() +" || Total sks : "+ student.getSks());
+                        // if (student.totalSks() > 144) {
+                        //     student.totalSks();
+                        // }
+                        main.total=0;
+                        System.out.println(student.totalSks());
+                        main.total = main.total + student.getSks();
+                        System.out.println(main.total);
+                        main.total2 = main.total + main.total;
+                        System.out.println(main.total2);
                     }
+                    
+                    
                     System.out.print("Ingin menghapus data : ");
                     main.remmove = main.scanner.next();
                     if (main.remmove.equalsIgnoreCase("y")) {
